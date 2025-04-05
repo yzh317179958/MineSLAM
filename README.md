@@ -80,3 +80,11 @@ source devel/setup.bash
 ```bash
 roslaunch lio_sam run.launch
 ```
+#### LIO-SAM建图效果
+-![lio-sam](./docs/images/lio-sam.png)
+#### FAST-LIO2建图效果
+-![FAST-LIO2](./docs/images/FAST-LIO2.png)
+#### 本项目建图效果
+-![My](./docs/images/My.png)
+#### 轨迹对比
+-![轨迹对比](./docs/images/轨迹对比.png)
