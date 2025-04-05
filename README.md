@@ -1,2 +1,56 @@
-# MineSLAM
-An autonomous inspection robot for non-coal mines, powered by SLAM-based localization, multi-sensor fusion, supporting for unmanned operations underground.
+# MineSLAM 🚧🤖
+
+> 非煤矿井危险征兆智能巡检无人车  
+> Autonomous Inspection UGV for Hazard Detection in Non-Coal Mines
+
+---
+
+## 📌 项目简介 | Project Overview
+
+该项目来源于国家重点研发计划项目：《地下非煤矿山危险征兆智能巡检关键技术及装备2021YFC3001302》子课题。MineSLAM是一套面向非煤矿井复杂地下环境的智能巡检机器人系统，搭载 LIO-SAM 激光惯性里程计系统，结合多传感器融合和透水、地压、有毒气体传感器，用于识别潜在危险征兆，实现无人化自主巡检，提高矿井安全管理效率。
+
+该项目与山东黄金集团展开合作，以山东莱州焦家金矿为示范矿区完成应用示范及验收工作。
+
+该系统以自研履带式无人车为平台，适用于狭窄、不平整、无GPS信号的地下矿井环境，具备高鲁棒性的实时定位与智能识别能力。
+
+
+---
+
+## 🎯 项目目标 | Objectives
+
+- 📌 实现基于激光+IMU+视觉的 LIO-SAM SLAM定位与建图
+- 🧠 检测矿井环境中的危险征兆（裂缝、水渍、掉顶、电缆异常等）
+- 🚜 适应复杂地形的履带式无人车平台自主导航
+- 🧪 结合专业传感器完成透水风险与气体安全预警
+- 🧩 构建模块化系统，便于后期拓展与应用部署
+---
+
+## 🧠 技术栈 | Tech Stack
+
+| 模块             | 技术选型 / 硬件设备                             |
+|------------------|-----------------------------------------------|
+| SLAM             | **LIO-SAM** + ROS1 (Melodic / Noetic)         |
+| 激光雷达         | Velodyne 16线激光雷达                           |
+| 惯性导航         | 瑞芬 TL740D IMU                                |
+| 相机系统         | 双目相机                                       |
+| 车体平台         | 自研履带式无人车                                |
+| 控制器           | 域控制器（主控调度感知、计算与通信）              |
+| 透水检测         | 电磁法透水检测传感器（用于危险预警）              |
+| 气体检测         | 有毒气体检测模块（可燃气 / CO / CH₄ 等）         |
+| 感知识别         | YOLOv5 / 自定义CNN 模型                        |
+| 可视化与记录     | Rviz + Web 可视化平台（预留）                  |
+
+---
+
+## 📁 项目结构 | Project Structure
+
+```bash
+MineSLAM/
+├── slam/              # LIO-SAM配置与适配代码
+├── perception/        # 图像识别与危险征兆检测
+├── navigation/        # 路径规划、地图构建与控制指令
+├── hardware/          # 传感器驱动与域控制器适配
+├── ugv_design/        # 履带式无人车结构与电子系统设计（预留）
+├── data/              # 采集数据与示例场景
+├── docs/              # 项目说明文档与部署笔记
+└── README.md
