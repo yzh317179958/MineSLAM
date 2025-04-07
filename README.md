@@ -64,7 +64,7 @@ catkin_init_workspace
 #### 3️⃣ 克隆项目并编译
 ```bash
 cd ~/mine_slam_ws/src
-git clone https://github.com/yourusername/MineSLAM.git
+git clone https://github.com/yzh317179958/MineSLAM.git
 cd ..
 catkin_make
 source devel/setup.bash
